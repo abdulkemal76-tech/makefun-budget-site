@@ -1,0 +1,154 @@
+/* style.css — tampilan Rumah Tangga Cermat. Satu tugas: semua gaya situs. */
+:root {
+  --green: #2e7d4f;
+  --green-dark: #1e5c38;
+  --cream: #f7f4ec;
+  --paper: #fffdf7;
+  --ink: #22302a;
+  --muted: #5d6b62;
+  --line: #ddd8c6;
+  --accent: #b06a1e;
+  --bad: #b23a48;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 17px;
+}
+h1, h2, h3, .brand, .btn, button, input, select, .nav-link { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 .4em; color: var(--green-dark); }
+h2 { font-size: 1.25rem; margin: 0 0 .5em; color: var(--green-dark); }
+h3 { font-size: 1.05rem; margin: 1em 0 .4em; }
+p { margin: .4em 0 .8em; }
+a { color: var(--green); }
+a:hover { text-decoration-thickness: 2px; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+.muted { color: var(--muted); font-size: .92em; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.ok { color: var(--green); font-weight: 700; }
+.bad { color: var(--bad); font-weight: 700; }
+.big { font-size: 2rem; font-weight: 700; margin: .1em 0; color: var(--green-dark); }
+
+/* Header dan navigasi */
+.site-header { background: var(--green-dark); color: #fff; position: sticky; top: 0; z-index: 10; }
+.header-inner { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+.brand { color: #fff; text-decoration: none; font-weight: 700; font-size: 1.15rem; display: flex; align-items: center; gap: 10px; }
+.brand-mark { background: #f2b705; color: #22302a; font-weight: 800; border-radius: 8px; padding: 2px 8px; font-size: .95rem; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-link { color: #dcefe2; text-decoration: none; padding: 6px 10px; border-radius: 8px; font-size: .95rem; }
+.nav-link:hover { background: rgba(255,255,255,.14); color: #fff; }
+.nav-link.active { background: #f2b705; color: #22302a; font-weight: 700; }
+main { padding: 28px 20px 40px; }
+
+/* Panel, kartu, grid */
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; margin-bottom: 20px; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1.35fr; gap: 20px; align-items: start; }
+.goal-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: start; }
+.goal-grid .panel { margin-bottom: 0; }
+.hero { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; align-items: start; margin-bottom: 20px; }
+.hero-card { background: var(--paper); border: 1px solid var(--line); border-left: 6px solid var(--green); border-radius: var(--radius); padding: 18px 20px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; color: var(--accent); font-weight: 700; margin: 0 0 .4em; font-family: 'Segoe UI', system-ui, sans-serif; }
+.lede { font-size: 1.1rem; }
+.page-head { margin-bottom: 16px; }
+.toolbar { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+.month-pick { font-weight: 700; font-family: 'Segoe UI', system-ui, sans-serif; }
+select, input[type="number"], input[type="text"] { font-size: 1rem; padding: 8px 10px; border: 1px solid #b9bfae; border-radius: 8px; background: #fff; color: var(--ink); }
+input[type="range"] { width: 100%; accent-color: var(--green); }
+
+/* Tombol */
+.btn { display: inline-block; background: var(--green); color: #fff; text-decoration: none; border: none; cursor: pointer; font-weight: 700; padding: 10px 18px; border-radius: 10px; font-size: 1rem; }
+.btn:hover { background: var(--green-dark); }
+.btn-ghost { background: transparent; color: var(--green-dark); border: 2px solid var(--green); }
+.btn-ghost:hover { background: #e3efe6; }
+
+/* Amplop */
+.env-list { display: grid; gap: 12px; }
+.env-card { border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.env-card:last-child { border-bottom: none; padding-bottom: 0; }
+.env-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-family: 'Segoe UI', system-ui, sans-serif; }
+.env-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; flex: none; }
+.env-name { font-weight: 700; font-size: 1.05rem; }
+.env-nums { margin: .3em 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+.bar { height: 12px; background: #e8e4d5; border-radius: 6px; overflow: hidden; margin: 6px 0; }
+.bar-fill { height: 100%; border-radius: 6px; }
+.bar-over { background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.35) 0 6px, transparent 6px 12px); }
+.tag { font-size: .8rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #e8e4d5; color: var(--ink); margin-left: auto; white-space: nowrap; }
+.tag-ok { background: #dcefe2; color: var(--green-dark); }
+.tag-over { background: #f6dadd; color: var(--bad); }
+.env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+.env-grid .panel { margin-bottom: 0; }
+.legend { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-family: 'Segoe UI', system-ui, sans-serif; font-size: .95rem; }
+.legend li { display: flex; align-items: center; gap: 8px; }
+.donut { display: block; margin: 0 auto; max-width: 240px; width: 100%; }
+.donut-total { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 20px; font-weight: 700; fill: var(--ink); }
+.donut-label { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; fill: var(--muted); }
+
+/* Transaksi */
+.tx-list { list-style: none; padding: 0; margin: 0; }
+.tx-list li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: .98rem; }
+.tx-list li:last-child { border-bottom: none; }
+.tx-date { color: var(--muted); font-size: .85em; white-space: nowrap; font-family: 'Segoe UI', system-ui, sans-serif; }
+.tx-desc { flex: 1; }
+.tx-amount { font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: end; }
+.form-grid label { display: grid; gap: 4px; font-weight: 700; font-family: 'Segoe UI', system-ui, sans-serif; font-size: .92rem; }
+
+/* Tabel */
+.table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .98rem; }
+.table th, .table td { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: left; }
+.table th { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--green-dark); }
+
+/* Simulator dan tujuan */
+.sim-row { display: grid; gap: 4px; margin-bottom: 16px; }
+.sim-label { font-family: 'Segoe UI', system-ui, sans-serif; }
+.verdict { font-size: 1.25rem; font-weight: 700; padding: 12px 14px; border-radius: 10px; font-family: 'Segoe UI', system-ui, sans-serif; }
+.verdict-ok { background: #dcefe2; color: var(--green-dark); }
+.verdict-bad { background: #f6dadd; color: var(--bad); }
+.sim-list { list-style: none; padding: 0; }
+.sim-list li { padding: 5px 0; border-bottom: 1px dashed var(--line); font-family: 'Segoe UI', system-ui, sans-serif; }
+.family { list-style: none; padding: 0; }
+.family li { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.tips ol li, .panel ol li { margin-bottom: .5em; }
+
+/* Diari harga */
+.price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.price-card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; text-align: left; cursor: pointer; font-family: 'Segoe UI', system-ui, sans-serif; color: var(--ink); }
+.price-card:hover { border-color: var(--green); }
+.price-card.active { border: 2px solid var(--green); background: #eef6f0; }
+.price-card-name { display: block; font-weight: 700; }
+.price-card-value { display: block; font-size: 1.05rem; color: var(--green-dark); font-weight: 700; }
+.price-card-change { display: block; font-size: .85rem; color: var(--muted); }
+.line-chart { width: 100%; height: auto; }
+.chart-axis { font-size: 11px; fill: var(--muted); font-family: 'Segoe UI', system-ui, sans-serif; }
+.chart-grid { stroke: #e8e4d5; stroke-width: 1; }
+.sources li { margin-bottom: 12px; }
+
+/* Footer */
+.site-footer { background: var(--green-dark); color: #dcefe2; padding: 24px 0 32px; font-size: .92rem; }
+.site-footer a { color: #f2b705; }
+.site-footer strong { color: #fff; }
+
+/* Telepon */
+@media (max-width: 860px) {
+  .grid-2, .hero, .env-grid { grid-template-columns: 1fr; }
+  .goal-grid { grid-template-columns: 1fr; }
+  .price-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
+  .header-inner { gap: 8px; }
+  nav { gap: 2px; }
+  .nav-link { padding: 6px 7px; font-size: .88rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .price-grid { grid-template-columns: 1fr; }
+  .legend { grid-template-columns: 1fr; }
+  .panel { padding: 16px; }
+  .tx-list li { flex-wrap: wrap; }
+}
